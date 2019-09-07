@@ -42,10 +42,10 @@ class UptimeRecord:
                 if last_record.split(',')[0] == str(time_boot):
                     data_records[-1] = record
                     flag_update = True
-                    self.logger.info('update uptime time_boot: {}'.format(time_boot_str))
+                    self.logger.info('update uptime time_boot:{} uptime:{}'.format(time_boot_str, uptime_str))
             if not flag_update:
                 data_records.append(record)
-                self.logger.info('record new uptime time_boot: {}'.format(time_boot_str))
+                self.logger.info('record new uptime time_boot:{} uptime:{}'.format(time_boot_str, uptime_str))
 
             max_lines = 1000
             if len(data_records) > max_lines:
